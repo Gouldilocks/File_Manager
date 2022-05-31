@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 import os
 import shutil
+
 def sort_files_in_a_folder(mypath):
     '''
     A function to sort the files in a download folder
@@ -26,7 +27,8 @@ def sort_files_in_a_folder(mypath):
         if filetype in filetype_folder_dict.keys():
             dest_path=filetype_folder_dict[str(filetype)]
             shutil.move(src_path,dest_path)
-    print(src_path + '>>>' + dest_path)
+        print(src_path + '>>>' + dest_path)
+
 if __name__=="__main__":
     mypath='/Users/christiangould/Downloads'
     sort_files_in_a_folder(mypath)
