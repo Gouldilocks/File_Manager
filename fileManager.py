@@ -13,6 +13,9 @@ def sort_files_in_a_folder(mypath):
     filetype_folder_dict={}
     for file in files:
         filetype=file.split('.')[1]
+        print('filetype is: ', filetype)
+        if filetype == 'DS_Store':
+            continue
         if filetype not in file_type_variation_list:
             file_type_variation_list.append(filetype)
             new_folder_name=mypath+'/'+ filetype + '_folder'
@@ -22,6 +25,8 @@ def sort_files_in_a_folder(mypath):
             else:
                 os.mkdir(new_folder_name)
     for file in files:
+        if file == '.DS_Store':
+            continue
         src_path=mypath+'/'+file
         filetype=file.split('.')[1]
         if filetype in filetype_folder_dict.keys():
